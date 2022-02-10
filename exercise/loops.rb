@@ -53,9 +53,9 @@ while i < 10
 end
 
 i = 0
-until i < 10
+until i > 10
     j = 10
-    until j > 0
+    until j < 0
         if j > i
             print '* '
         else
