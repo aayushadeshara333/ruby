@@ -37,4 +37,30 @@ h.each_key {|key| puts key }
 h = { :a => 1, :b => 2 }
 h.each_value {|key| puts key }
 p h.empty?
-p h.eql? {:a => 1, :b => 2,}
+p h.eql?({ :a => 1, :b => 2 })
+p h.fetch(:a)
+a =  {1=> "one", 2 => [2,"two"], 3 => "three"}
+p a.flatten(2)
+p h.has_key? :a
+p h.has_value? 1
+p h.hash
+p h.to_s
+p h.inspect
+p h.invert
+p h.keep_if {|k, v| v > 1}
+h = { :a => 1, :b => 2 }
+p h.key(1)
+p h.keys
+p h.length
+p h.merge({:c => 3, :d => 4})
+p h.rassoc(1)
+p h.rehash
+p h.reject {|k, v| v > 1}
+p h.select {|k, v| v > 1}
+p h.shift
+h = { :a => 1, :b => 2 }
+p h.size
+p h.to_a
+p h.value? 2
+p h.values
+p h.values_at(:a, :b)
