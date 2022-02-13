@@ -66,3 +66,7 @@ until i > 10
     puts ''
     i += 1
 end
+
+(0).upto(10) do |i|
+    p i
+end
