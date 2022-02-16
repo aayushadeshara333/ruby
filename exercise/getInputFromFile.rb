@@ -1,0 +1,1 @@
+readlines.each {|x| print "#{x.include?("\n") ? "#{x.slice(0, x.length - 1)} - " : x}"}

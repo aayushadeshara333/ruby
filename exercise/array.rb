@@ -6,7 +6,7 @@ p arr.&([1, 2, 3])
 p arr.at(3)
 p arr.fetch(5)
 p arr.last
-p arr.an([10, 11, 12])
+p arr.union([10, 11, 12])
 p arr.difference([1, 2, 3])
 p arr.intersection([1, 2, 3])
 p arr.push(10)
