@@ -23,4 +23,4 @@ end
 
 BB.checkB()
 b = BB.new
-b.check()
+b.check()   
