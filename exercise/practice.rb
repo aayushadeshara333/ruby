@@ -1,25 +1,28 @@
-def matchingStrings(strings, queries)
-    myHash = {}
-    queries.each {|x| myHash[x] = 0}
-    strings.each {|x| myHash[x] += 1 if myHash.key? x}
-    temp = []
-    (0...queries.length).each {|x| temp.push(myHash[queries[x]])}
-    return temp
+def cookies(k, arr)
+    arr.sort!
+    count = 0
+    while arr[0] < k && arr.length > 1
+        p "enter = #{arr.length}"
+        temp = arr[0] + (arr[1] * 2)
+        p "temp = #{temp}"
+        arr.slice!(0, 2)
+        index = arr.index {|x| x > temp - 1}
+        index ? arr.insert(index, temp) : arr.push(temp)
+        p arr
+        count += 1
+        p "count = #{count}"
+    end
+    print arr
+    return arr[0] < k ? -1 : count
 end
 
-strings_count = gets.strip.to_i
-strings = Array.new(strings_count)
-strings_count.times do |i|
-    strings_item = gets.chomp
-    strings[i] = strings_item
-end
+first_multiple_input = gets.rstrip.split
 
-queries_count = gets.strip.to_i
-queries = Array.new(queries_count)
-queries_count.times do |i|
-    queries_item = gets.chomp
-    queries[i] = queries_item
-end
+n = first_multiple_input[0].to_i
 
-res = matchingStrings strings, queries
-p res
+k = first_multiple_input[1].to_i
+
+a = gets.rstrip.split.map(&:to_i)
+
+result = cookies k, a
+p result
