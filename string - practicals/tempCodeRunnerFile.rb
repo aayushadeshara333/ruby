@@ -1,19 +1,18 @@
-str = "communication"
-def reverseVowels(str)
-    stack = []
-    (0...str.length).each do |i|
-        if /[aeiouu]/.match(str[i])
-            stack.push(str[i])
+arr = ['aa', 'a']
+def longestCommonPrefix(arr)
+    stack = arr[0].split("")
+    (1...arr.length).each do |x|
+        arr[x].split("").each_with_index do |each, index|
+            if each != stack[index]
+                stack = stack.slice(0, index)
+                break
+            end
+            if index == each.length - 1
+                stack = each.split("")
+            end
         end
     end
-    (0...str.length).each do |i|
-        if /[aeiouu]/.match(str[i])
-            p stack.pop()
-            str[i] = stack.pop()
-            stack.shift
-        end
-    end
-    return str
+    return stack.empty? ? "Not Found" : stack.join("")
 end
-answer = reverseVowels(str)
+answer = longestCommonPrefix(arr)
 p answer
