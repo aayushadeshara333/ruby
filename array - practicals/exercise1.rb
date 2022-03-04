@@ -15,7 +15,21 @@ def indices(arr, result)
     return obtained
 end
 
-answer = findIndices([1, 2, 3, 4, 5, 99], 104)
+answer = findIndices([1, 2, 3, 4, 5, 99], 101)
 p answer
-answer = indices([1, 2, 3, 4, 5, 99], 104)
+answer = indices([1, 2, 3, 4, 5, 99], 101)
+p answer
+
+#Using Hash
+def hashIndices(arr, number)
+    myHash = {}
+    arr.each_with_index{ |x, i| myHash[x] = i}
+    myHash.each do |key, value|
+        if myHash[number - key] != nil
+            return value, myHash[number - key]
+        end
+    end
+    return "Not Found"
+end
+answer = hashIndices([1, 2, 3, 4, 5, 99], 101)
 p answer
